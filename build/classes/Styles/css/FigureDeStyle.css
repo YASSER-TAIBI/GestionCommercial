@@ -1,0 +1,153 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 11 nov. 2017, 10:47:23
+    Author     : h
+#8FDFEF
+#87D6E6   22
+*/
+
+/* #0277bd
+#E2E2EC
+#F0FFFF
+*/
+
+
+.root{
+     -fx-background-color: linear-gradient(#9be8f3,#EBF9FC);
+    -fx-font-size: 5pt;
+    -fx-font-family: "Arial";
+/*    -fx-base: rgb(132, 145, 47);*/
+/*    fx-background: rgb(225, 228, 203);*/
+}
+
+
+
+
+.pane{
+    
+    -fx-background-color:linear-gradient(#EBF9FC,F5F5F5);
+    -fx-background-radius: 22;
+}
+
+.button{
+-fx-font-veight: bold;
+-fx-background-color: #17BBA6;
+-fx-background-radius: 22;
+-fx-font-size: 16;
+-fx-text-fill: white;
+}
+
+.button:hover {
+-fx-font-veight: bold;
+-fx-background-color: white;
+-fx-background-radius: 22;
+-fx-font-size: 16;
+-fx-text-fill: #17BBA6;
+-fx-border-color:#17BBA6;
+-fx-border-radius: 20;
+-fx-border-vidth:3;
+}
+
+.button:pressed{
+-fx-font-veight: bold;
+-fx-background-color: white;
+-fx-background-radius: 22;
+-fx-font-size: 16;
+-fx-text-fill: #17BBA6;
+-fx-border-color:#17BBA6;
+-fx-border-radius: 20;
+-fx-border-vidth:3;
+-fx-rotate:5;
+}
+
+
+.label {
+    -fx-font-size: 55px;
+    -fx-font-family: Nyala;
+    -fx-text-fill: white;
+}
+
+.label_titre {
+    -fx-font-size: 18px;
+    -fx-font-family: Nyala;
+    -fx-text-fill: black;
+}
+
+
+.label_load {
+    -fx-font-size: 18px;
+    -fx-font-family: Nyala;
+    -fx-text-fill: #34495E;  
+}
+
+.label_version {
+    -fx-font-size: 13px;
+    -fx-font-family: Nyala;
+    -fx-text-fill: #34495E;  
+}
+
+.textfield
+{
+    -fx-font-size: 20px;
+    -fx-font-family: Nyala ;
+    }
+    
+.textfield_login
+{
+    -fx-font-size: 18px;
+    -fx-font-family: Nyala ;
+    }
+
+.titre {
+    -fx-font-size: 50px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #333333;
+    -fx-effect: dropshadow( gaussian , rgba(255,255,255,0.5) , 0,0,0,1 );
+}
+
+
+
+
+.label_bienvenue{
+    -fx-font-size: 65px;
+    -fx-font-weight: bold;
+    -fx-font-family: Nyala ;
+    -fx-text-fill: #34495E;  
+}
+
+.label_slogan{
+    -fx-font-size: 19px;
+    -fx-font-weight: bold;
+    -fx-font-family: Nyala ;
+    -fx-text-fill: #34495E;
+    -fx-effect: dropshadow( gaussian , rgba(255,255,255,0.5) , 0,0,0,1 );
+    
+}
+
+
+
+
+.labelerreur
+{
+    -fx-font-size: 11px;
+    -fx-font-weight: bold;
+   -fx-text-fill:red;
+    
+}
+.table {
+-fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #333333;
+    
+}
+
+table-view .table-row-cell {
+  -fx-border-width: 1;
+  -fx-font-size: 1px;
+    -fx-font-family: "Arial";
+}
+

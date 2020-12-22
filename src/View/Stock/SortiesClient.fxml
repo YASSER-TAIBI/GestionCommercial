@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.Reflection?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="749.0" prefWidth="1302.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.Stock.SortiesClientController">
+   <children>
+      <AnchorPane prefHeight="749.0" prefWidth="322.0" style="-fx-background-color: #17BBA6;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label layoutX="46.0" layoutY="32.0" prefHeight="61.0" prefWidth="236.0" styleClass="label1" text="Commande" textFill="WHITE">
+               <font>
+                  <Font name="Nyala" size="55.0" />
+               </font>
+            </Label>
+            <Label layoutX="91.0" layoutY="79.0" prefHeight="61.0" prefWidth="129.0" styleClass="label1" text="Client" textFill="WHITE">
+               <font>
+                  <Font name="Nyala" size="55.0" />
+               </font>
+               <effect>
+                  <Reflection fraction="0.5" topOffset="-5.0" />
+               </effect>
+            </Label>
+            <GridPane layoutY="243.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="299.0" prefWidth="322.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+               <columnConstraints>
+                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="181.0" minWidth="0.0" prefWidth="30.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="313.0" minWidth="10.0" prefWidth="288.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="223.0" minWidth="10.0" prefWidth="30.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="88.0" minHeight="10.0" prefHeight="86.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="29.0" minHeight="0.0" prefHeight="0.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <children>
+                  <TextField fx:id="libelleField" alignment="CENTER" disable="true" onKeyPressed="#codeEntreeTableKeyPressed" prefHeight="34.0" prefWidth="517.0" promptText="Code Commande" GridPane.columnIndex="1">
+                     <font>
+                        <Font name="Nyala" size="20.0" />
+                     </font>
+                  </TextField>
+                  <DatePicker fx:id="dateSorties" prefHeight="33.0" prefWidth="380.0" promptText="Date Commande" styleClass="label1" stylesheets="@../../Styles/css/FigureDeStyle.css" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <TextArea fx:id="designationTextArea" nodeOrientation="LEFT_TO_RIGHT" prefHeight="85.0" prefWidth="421.0" promptText="Désignation" styleClass="label1" stylesheets="@../../Styles/css/FigureDeStyle.css" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+                  <ComboBox fx:id="magasinSourCombo" prefHeight="33.0" prefWidth="281.0" promptText="Sélectionner Magasin..." styleClass="label1" stylesheets="@../../Styles/css/FigureDeStyle.css" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                  <ComboBox fx:id="clientCombo" prefHeight="33.0" prefWidth="457.0" promptText="Sélectionner Client..." styleClass="label1" stylesheets="@../../Styles/css/FigureDeStyle.css" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+               </children>
+            </GridPane>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="322.0" prefHeight="749.0" prefWidth="980.0" style="-fx-background-color: #FFFFFF;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="322.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <TableView fx:id="sortiesTable" layoutY="158.0" onMouseClicked="#afficherArt" prefHeight="430.0" prefWidth="980.0" styleClass="label" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+              <columns>
+                <TableColumn fx:id="codeArticleColumn" prefWidth="89.0" text="Code Article" />
+                <TableColumn fx:id="libelleColumn" minWidth="0.0" prefWidth="256.0" text="Libelle" />
+                  <TableColumn fx:id="qteSortiesGlobalColumn" prefWidth="286.0" text="Qté Commande">
+                     <columns>
+                        <TableColumn fx:id="qteColumn" onEditCommit="#editCommitQuantiteColumn" prefWidth="100.0" text="Qté" />
+                        <TableColumn fx:id="qteCaisseColumn" onEditCommit="#editCommitQuantiteCaisseColumn" prefWidth="100.0" text="Qté Caisse" />
+                        <TableColumn fx:id="typeVenteColumn" prefWidth="100.0" text="Type" />
+                     </columns>
+                  </TableColumn>
+                  <TableColumn fx:id="conditionnementColumn" prefWidth="113.0" text="Conditionnement" />
+                  <TableColumn fx:id="qteTotalColumn" prefWidth="109.0" text="Quantité Total" />
+                  <TableColumn fx:id="montantColumn" prefWidth="112.0" text="Montant" />
+              </columns>
+            </TableView>
+            <GridPane prefHeight="141.0" prefWidth="928.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+              <columnConstraints>
+                  <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" maxWidth="156.0" minWidth="10.0" prefWidth="156.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="181.0" minWidth="10.0" prefWidth="153.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="259.0" minWidth="10.0" prefWidth="133.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="308.0" minWidth="10.0" prefWidth="170.0" />
+                  <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" maxWidth="350.0" minWidth="10.0" prefWidth="160.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="291.0" minWidth="10.0" prefWidth="146.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="127.0" minWidth="0.0" prefWidth="6.0" />
+              </columnConstraints>
+              <rowConstraints>
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="36.0" minHeight="10.0" prefHeight="25.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="45.0" minHeight="10.0" prefHeight="45.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <ImageView fx:id="rechercheBtn" fitHeight="32.0" fitWidth="32.0" onMouseClicked="#rechercheArticle" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                     <image>
+                        <Image url="@../../Styles/img/magnifying-glass-icon.png" />
+                     </image>
+                  </ImageView>
+                  <Label prefHeight="17.0" prefWidth="129.0" text="Recherche Article  " GridPane.rowIndex="3">
+                     <font>
+                        <Font name="Nyala" size="18.0" />
+                     </font>
+                  </Label>
+               </children>
+            </GridPane>
+            <GridPane layoutY="638.0" prefHeight="104.0" prefWidth="928.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+               <columnConstraints>
+                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="120.0" minWidth="10.0" prefWidth="120.0" />
+                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="98.0" minWidth="6.0" prefWidth="18.0" />
+                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="134.0" minWidth="10.0" prefWidth="120.0" />
+                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="134.0" minWidth="10.0" prefWidth="18.0" />
+                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="198.0" minWidth="10.0" prefWidth="120.0" />
+                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="198.0" minWidth="10.0" prefWidth="18.0" />
+                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="143.0" minWidth="10.0" prefWidth="120.0" />
+                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <children>
+                  <Button fx:id="btnAjouter" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#ajouterOnAction" prefHeight="33.0" prefWidth="108.0" stylesheets="@../../Styles/css/FigureDeStyle.css" text="Ajouter" GridPane.columnIndex="4" />
+                  <Button fx:id="btnRafraichir" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#rafraichirOnAction" prefHeight="33.0" prefWidth="108.0" stylesheets="@../../Styles/css/FigureDeStyle.css" text="Rafraîchir" GridPane.columnIndex="6" />
+               </children>
+            </GridPane>
+            <GridPane layoutY="586.0" prefHeight="51.0" prefWidth="980.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+               <columnConstraints>
+                  <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" maxWidth="163.0" minWidth="10.0" prefWidth="49.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="563.0" minWidth="10.0" prefWidth="490.0" />
+                  <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" maxWidth="532.0" minWidth="10.0" prefWidth="177.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="455.0" minWidth="10.0" prefWidth="43.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="352.0" minWidth="10.0" prefWidth="155.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="149.0" minWidth="0.0" prefWidth="14.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <children>
+                  <TextField fx:id="montantTotal" alignment="CENTER" disable="true" prefHeight="27.0" prefWidth="103.0" GridPane.columnIndex="4" />
+                  <ImageView fx:id="calcule" fitHeight="32.0" fitWidth="32.0" onMouseClicked="#calculeTotalPrixVente" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3">
+                     <image>
+                        <Image url="@../../Styles/img/calculator-icon.png" />
+                     </image>
+                  </ImageView>
+                  <Label nodeOrientation="LEFT_TO_RIGHT" prefHeight="19.0" prefWidth="115.0" text="Montant Total: " GridPane.columnIndex="2">
+                     <font>
+                        <Font name="Nyala" size="19.0" />
+                     </font>
+                  </Label>
+               </children>
+            </GridPane>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

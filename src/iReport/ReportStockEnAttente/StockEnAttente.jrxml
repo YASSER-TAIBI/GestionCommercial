@@ -1,0 +1,307 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="4ac51980-03d9-4fd1-87b7-a16a5f56e971">
+	<property name="ireport.zoom" value="1.5"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<property name="net.sf.jasperreports.awt.ignore.missing.font" value="true"/>
+	<parameter name="codeTransfert" class="java.lang.String"/>
+	<parameter name="dateTransfert" class="java.util.Date"/>
+	<parameter name="depot" class="java.lang.String"/>
+	<parameter name="magasin" class="java.lang.String"/>
+	<parameter name="chauffeur" class="java.lang.String"/>
+	<parameter name="vehicule" class="java.lang.String"/>
+	<field name="article.code" class="java.lang.String"/>
+	<field name="article.libelle" class="java.lang.String"/>
+	<field name="quantite" class="java.math.BigDecimal"/>
+	<field name="quantiteCaisse" class="java.math.BigDecimal"/>
+	<field name="quantiteRecu" class="java.math.BigDecimal"/>
+	<title>
+		<band height="71" splitType="Stretch">
+			<rectangle radius="10">
+				<reportElement x="99" y="27" width="361" height="26" backcolor="#17BBA6" uuid="5117c0d0-eaf9-4505-a290-71697ab40d35"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="152" y="21" width="255" height="36" uuid="1211eb68-fd69-4f07-830e-4cda05d34026"/>
+				<textElement textAlignment="Center" verticalAlignment="Top">
+					<font fontName="Calibri" size="24" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Stock En Attente]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="116" splitType="Stretch">
+			<textField>
+				<reportElement x="130" y="16" width="135" height="17" uuid="97efab58-172f-4e98-8b34-917cf35d9cd1"/>
+				<textElement>
+					<font fontName="Calibri" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{codeTransfert}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="52" y="16" width="78" height="17" uuid="146b2b80-525c-4550-9859-2cd0372f70eb"/>
+				<textElement textAlignment="Center" verticalAlignment="Top">
+					<font fontName="Calibri" size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Code Transfert:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="52" y="33" width="78" height="17" uuid="a17f487c-c918-4c4f-a852-4a590cd8701a"/>
+				<textElement textAlignment="Center" verticalAlignment="Top">
+					<font fontName="Calibri" size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Date Transfert:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="316" y="16" width="78" height="17" uuid="d92d970e-7488-4302-a33d-661920e163a6"/>
+				<textElement textAlignment="Center" verticalAlignment="Top">
+					<font fontName="Calibri" size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Dépot Source:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="309" y="33" width="83" height="17" uuid="331a3920-0d2b-4efd-98fd-a0f4435962e9"/>
+				<textElement textAlignment="Center" verticalAlignment="Top">
+					<font fontName="Calibri" size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Magasin Source:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="335" y="50" width="59" height="17" uuid="c7f3ba9b-4339-496d-af90-90096d71f6fa"/>
+				<textElement textAlignment="Center" verticalAlignment="Top">
+					<font fontName="Calibri" size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Chauffeur:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="340" y="67" width="54" height="17" uuid="79fe9017-9a53-4ee1-90ed-51706d8a6575"/>
+				<textElement textAlignment="Center" verticalAlignment="Top">
+					<font fontName="Calibri" size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Véhicule:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="394" y="16" width="115" height="17" uuid="1f49bae3-701f-4fea-8d24-d9be0e883970"/>
+				<textElement>
+					<font fontName="Calibri" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{depot}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="394" y="33" width="115" height="17" uuid="9e17df92-0b9c-4911-9d8a-5e7e6847d9a4"/>
+				<textElement>
+					<font fontName="Calibri" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{magasin}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="394" y="50" width="115" height="17" uuid="e6d01143-b3a5-40fe-98d5-4e3b3e76b8db"/>
+				<textElement>
+					<font fontName="Calibri" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{chauffeur}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="394" y="67" width="115" height="17" uuid="d413f7a1-9920-4d12-bfe2-8394702df214"/>
+				<textElement>
+					<font fontName="Calibri" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{vehicule}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="130" y="33" width="135" height="17" uuid="bb508d4d-32f5-4508-ae47-7f3236f4b474"/>
+				<textElement>
+					<font fontName="Calibri" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{dateTransfert}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="35" splitType="Stretch">
+			<staticText>
+				<reportElement x="8" y="18" width="63" height="17" uuid="c5cfd33d-150c-45a7-9520-00e58165e918"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Top">
+					<font fontName="Calibri" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Code]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="71" y="18" width="171" height="17" uuid="1cd3e142-5d4b-41ab-ab97-9666f8d21ec9"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Top">
+					<font fontName="Calibri" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Article]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="242" y="18" width="73" height="17" uuid="9ad27aa2-4dee-4c37-b7e1-3d33b5035559"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Top">
+					<font fontName="Calibri" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Qté]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="315" y="18" width="73" height="17" uuid="f2ce56f9-9b84-439d-832d-359b92b34880"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Top">
+					<font fontName="Calibri" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Qté Caisse]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="388" y="18" width="73" height="17" uuid="9d016c4a-b648-4fb8-8cee-bfcf0d032f36"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Top">
+					<font fontName="Calibri" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Qté Reçu]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="461" y="18" width="86" height="17" uuid="d63161d6-9214-4234-80c3-499c97584cd7"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Top">
+					<font fontName="Calibri" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Qté Caisse Reçu]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="242" y="1" width="146" height="17" uuid="a1498956-4a7d-4bc4-b4c9-c72ad05bebdb"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Top">
+					<font fontName="Calibri" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Qté Transfert]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="388" y="1" width="159" height="17" uuid="29394c13-11f1-419a-9212-410833a2932f"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Top">
+					<font fontName="Calibri" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Qté Transfert Reçu]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="18" splitType="Stretch">
+			<textField>
+				<reportElement x="8" y="1" width="63" height="17" uuid="9fb657d8-4e1e-4926-be72-b624445f297e"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font fontName="Calibri" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{article.code}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="71" y="1" width="171" height="17" uuid="7555adef-b469-4a80-9d0a-7d9ebebf9ef7"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font fontName="Calibri" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{article.libelle}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="242" y="1" width="73" height="17" uuid="761e5db5-ebfd-4851-8825-75b5cfb4822e"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font fontName="Calibri" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{quantite}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="315" y="1" width="73" height="17" uuid="ddc63c74-053c-4e6e-9ac2-085281682703"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font fontName="Calibri" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{quantiteCaisse}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="388" y="1" width="73" height="17" uuid="8041b1c0-8963-4349-b913-49095082635c"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="460" y="1" width="87" height="17" uuid="0cb1c618-9d09-43bf-884c-6abf81f26141"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<text><![CDATA[]]></text>
+			</staticText>
+		</band>
+	</detail>
+	<summary>
+		<band height="68"/>
+	</summary>
+</jasperReport>

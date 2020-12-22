@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.Reflection?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="749.0" prefWidth="1302.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.Article.ListeArtiicleController">
+   <children>
+      <AnchorPane prefHeight="749.0" prefWidth="322.0" style="-fx-background-color: #17BBA6;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label alignment="CENTER" layoutY="57.0" prefHeight="47.0" prefWidth="322.0" text="Liste Article" textFill="WHITE" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+               <font>
+                  <Font name="Nyala" size="50.0" />
+               </font>
+               <effect>
+                  <Reflection fraction="0.5" />
+               </effect>
+            </Label>
+            <GridPane layoutY="267.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="269.0" prefWidth="322.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+              <columnConstraints>
+                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="181.0" minWidth="0.0" prefWidth="22.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="307.0" minWidth="10.0" prefWidth="281.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="223.0" minWidth="10.0" prefWidth="21.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints maxHeight="34.0" minHeight="10.0" prefHeight="34.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="25.0" minHeight="10.0" prefHeight="25.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="34.0" minHeight="10.0" prefHeight="34.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="25.0" minHeight="10.0" prefHeight="25.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="34.0" minHeight="10.0" prefHeight="34.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="25.0" minHeight="10.0" prefHeight="25.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="34.0" minHeight="10.0" prefHeight="34.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="25.0" minHeight="10.0" prefHeight="25.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="34.0" minHeight="10.0" prefHeight="34.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="25.0" minHeight="10.0" prefHeight="25.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <TextField fx:id="codeField" alignment="CENTER" prefHeight="33.0" prefWidth="251.0" promptText="Code Article" styleClass="textfield" stylesheets="@../../Styles/css/FigureDeStyle.css" GridPane.columnIndex="1">
+                     <font>
+                        <Font name="Nyala" size="20.0" />
+                     </font></TextField>
+                  <TextField fx:id="libelleField" alignment="CENTER" prefHeight="33.0" prefWidth="251.0" promptText="Libelle" styleClass="textfield" stylesheets="@../../Styles/css/FigureDeStyle.css" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                     <font>
+                        <Font name="Nyala" size="20.0" />
+                     </font></TextField>
+                  <TextField fx:id="conditionnementField" alignment="CENTER" prefHeight="33.0" prefWidth="251.0" promptText="Conditionnement" styleClass="textfield" stylesheets="@../../Styles/css/FigureDeStyle.css" GridPane.columnIndex="1" GridPane.rowIndex="6">
+                     <font>
+                        <Font name="Nyala" size="20.0" />
+                     </font></TextField>
+                  <TextField fx:id="poidsField" alignment="CENTER" layoutX="70.0" layoutY="27.0" prefHeight="33.0" prefWidth="251.0" promptText="Poids" styleClass="textfield" stylesheets="@../../Styles/css/FigureDeStyle.css" GridPane.columnIndex="1" GridPane.rowIndex="8">
+                     <font>
+                        <Font name="Nyala" size="20.0" />
+                     </font></TextField>
+                  <TextField fx:id="codeFactureField" alignment="CENTER" prefHeight="33.0" prefWidth="251.0" promptText="Code Facture" styleClass="textfield" stylesheets="@../../Styles/css/FigureDeStyle.css" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                     <font>
+                        <Font name="Nyala" size="20.0" />
+                     </font>
+                  </TextField>
+                  <Label fx:id="conditionnementerreur" prefHeight="20.0" prefWidth="305.0" styleClass="labelerreur" textFill="#e33910" GridPane.columnIndex="1" GridPane.rowIndex="7">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="poidserreur" prefHeight="20.0" prefWidth="306.0" styleClass="labelerreur" textFill="#e33910" GridPane.columnIndex="1" GridPane.rowIndex="9">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+               </children>
+            </GridPane>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="322.0" prefHeight="749.0" prefWidth="980.0" style="-fx-background-color: #FFFFFF;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="322.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <TableView fx:id="articleTable" layoutY="175.0" onMouseClicked="#afficherArt" prefHeight="438.0" prefWidth="756.0" styleClass="label" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+              <columns>
+                <TableColumn fx:id="codeArticleColumn" prefWidth="105.0" text="Code Article" />
+                  <TableColumn fx:id="codeFactureColumn" prefWidth="106.0" text="Code Facture" />
+                <TableColumn fx:id="libelleColumn" prefWidth="306.0" text="Libelle" />
+                  <TableColumn fx:id="categorieArticleColumn" prefWidth="212.0" text="Catégorie Article" />
+                  <TableColumn fx:id="conditionnementColumn" prefWidth="135.0" text="Conditionnement" />
+                  <TableColumn fx:id="poidsColumn" prefWidth="115.0" text="Poids" />
+              </columns>
+            </TableView>
+            <GridPane prefHeight="153.0" prefWidth="928.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+              <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="147.0" minWidth="10.0" prefWidth="57.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="283.0" minWidth="10.0" prefWidth="160.0" />
+                  <ColumnConstraints halignment="LEFT" hgrow="SOMETIMES" maxWidth="242.0" minWidth="10.0" prefWidth="182.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="152.0" minWidth="4.0" prefWidth="85.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="307.0" minWidth="10.0" prefWidth="193.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="288.0" minWidth="10.0" prefWidth="183.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="209.0" minWidth="0.0" prefWidth="68.0" />
+              </columnConstraints>
+              <rowConstraints>
+                  <RowConstraints maxHeight="56.0" minHeight="10.0" prefHeight="49.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="29.0" minHeight="10.0" prefHeight="22.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="25.0" minHeight="10.0" prefHeight="18.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="40.0" minHeight="10.0" prefHeight="26.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="29.0" minHeight="4.0" prefHeight="28.0" valignment="CENTER" />
+              </rowConstraints>
+               <children>
+                  <Label prefHeight="17.0" prefWidth="107.0" styleClass="label_titre" stylesheets="@../../Styles/css/FigureDeStyle.css" text="Famille Article: " GridPane.columnIndex="1" GridPane.rowIndex="1">
+                     <font>
+                        <Font name="Nyala" size="18.0" />
+                     </font>
+                  </Label>
+                  <ComboBox fx:id="familleCombo" onAction="#familleComboOnAction" prefHeight="25.0" prefWidth="194.0" promptText="Sélectionner..." stylesheets="@../../Styles/css/FigureDeStyle.css" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                  <Label prefHeight="17.0" prefWidth="153.0" styleClass="label_titre" stylesheets="@../../Styles/css/FigureDeStyle.css" text="Detail Famille Article: " GridPane.columnIndex="4" GridPane.rowIndex="1">
+                     <font>
+                        <Font name="Nyala" size="18.0" />
+                     </font>
+                  </Label>
+                  <ComboBox fx:id="detailFamilleCombo" onAction="#detailFamilleOnAction" prefHeight="25.0" prefWidth="202.0" promptText="Sélectionner..." GridPane.columnIndex="5" GridPane.rowIndex="1" />
+                  <Label prefHeight="17.0" prefWidth="141.0" styleClass="label_titre" stylesheets="@../../Styles/css/FigureDeStyle.css" text="Sous Famille Article: " GridPane.columnIndex="1" GridPane.rowIndex="3">
+                     <font>
+                        <Font name="Nyala" size="18.0" />
+                     </font>
+                  </Label>
+                  <ComboBox fx:id="sousFamilleCombo" onAction="#sousFamilleOnAction" prefHeight="25.0" prefWidth="194.0" promptText="Sélectionner..." GridPane.columnIndex="2" GridPane.rowIndex="3" />
+                  <Label prefHeight="17.0" prefWidth="199.0" styleClass="label_titre" stylesheets="@../../Styles/css/FigureDeStyle.css" text="Detail Sous Famille Article:" GridPane.columnIndex="4" GridPane.rowIndex="3">
+                     <font>
+                        <Font name="Nyala" size="18.0" />
+                     </font>
+                  </Label>
+                  <ComboBox fx:id="detailSousFamilleCombo" onAction="#detailSousFamilleOnAction" prefHeight="25.0" prefWidth="191.0" promptText="Sélectionner..." GridPane.columnIndex="5" GridPane.rowIndex="3" />
+               </children>
+            </GridPane>
+            <GridPane layoutY="651.0" prefHeight="55.0" prefWidth="928.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+               <columnConstraints>
+                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="120.0" minWidth="10.0" prefWidth="120.0" />
+                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="98.0" minWidth="6.0" prefWidth="18.0" />
+                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="120.0" minWidth="10.0" prefWidth="120.0" />
+                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="134.0" minWidth="10.0" prefWidth="18.0" />
+                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="120.0" minWidth="10.0" prefWidth="120.0" />
+                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="198.0" minWidth="10.0" prefWidth="18.0" />
+                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="120.0" minWidth="10.0" prefWidth="120.0" />
+                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <children>
+                  <Button fx:id="btnAjouter" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#ajouterOnAction" prefHeight="33.0" prefWidth="108.0" stylesheets="@../../Styles/css/FigureDeStyle.css" text="Ajouter" GridPane.columnIndex="2" />
+                  <Button fx:id="btnRafraichir" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#rafraichirOnAction" prefHeight="33.0" prefWidth="108.0" stylesheets="@../../Styles/css/FigureDeStyle.css" text="Rafraîchir" GridPane.columnIndex="8" />
+                  <Button fx:id="btnSupprimer" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#supprimerOnAction" prefHeight="33.0" prefWidth="108.0" stylesheets="@../../Styles/css/FigureDeStyle.css" text="Supprimer" GridPane.columnIndex="6" />
+                  <Button fx:id="btnModifer" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#modifierOnAction" prefHeight="33.0" prefWidth="108.0" stylesheets="@../../Styles/css/FigureDeStyle.css" text="Modifier" GridPane.columnIndex="4" />
+               </children>
+            </GridPane>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

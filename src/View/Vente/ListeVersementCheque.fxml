@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.effect.Reflection?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="749.0" prefWidth="1302.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.Vente.ListeVersementChequeController">
+   <children>
+      <AnchorPane prefHeight="749.0" prefWidth="322.0" style="-fx-background-color: #17BBA6;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label alignment="CENTER" layoutY="35.0" prefHeight="52.0" prefWidth="322.0" styleClass="label1" text="Liste Versement" textFill="WHITE" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+               <font>
+                  <Font name="Nyala" size="50.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" layoutX="1.0" layoutY="87.0" prefHeight="52.0" prefWidth="247.0" styleClass="label1" text="Chéque" textFill="WHITE" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+               <font>
+                  <Font name="Nyala" size="50.0" />
+               </font>
+               <effect>
+                  <Reflection fraction="0.5" />
+               </effect>
+            </Label>
+            <GridPane layoutY="347.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="81.0" prefWidth="322.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+               <columnConstraints>
+                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="181.0" minWidth="0.0" prefWidth="30.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="347.0" minWidth="10.0" prefWidth="293.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="223.0" minWidth="10.0" prefWidth="30.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <children>
+                  <ComboBox fx:id="vendeurCombo" onAction="#vendeurComboOnAction" prefHeight="33.0" prefWidth="328.0" promptText="Sélectionner Vendeur..." styleClass="label1" stylesheets="@../../Styles/css/FigureDeStyle.css" GridPane.columnIndex="1" />
+               </children>
+            </GridPane>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="322.0" prefHeight="749.0" prefWidth="980.0" style="-fx-background-color: #FFFFFF;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="322.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <TableView fx:id="versementChequeTable" layoutY="150.0" onMouseClicked="#afficherArt" prefHeight="315.0" prefWidth="980.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+               <columns>
+                  <TableColumn fx:id="numChequeColumn" prefWidth="87.0" text="Num Chéque" />
+                  <TableColumn fx:id="nomColumn" prefWidth="118.0" text="Nom Proprietaire" />
+                  <TableColumn fx:id="dateEcheanceColumn" prefWidth="110.0" text="Date Échéance" />
+                  <TableColumn fx:id="dateRecuColumn" prefWidth="110.0" text="Date Reçu" />
+                  <TableColumn fx:id="typeChequeColumn" prefWidth="113.0" text="Type Chéque" />
+                  <TableColumn fx:id="banqueColumn" prefWidth="130.0" text="Banque" />
+                  <TableColumn fx:id="clientColumn" prefWidth="127.0" text="Client" />
+                  <TableColumn fx:id="montantColumn" prefWidth="122.0" text="Montant" />
+                  <TableColumn fx:id="ActionColumn" prefWidth="62.0" text="Action" />
+               </columns>
+            </TableView>
+            <GridPane layoutY="672.0" prefHeight="55.0" prefWidth="928.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+               <columnConstraints>
+                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="120.0" minWidth="10.0" prefWidth="120.0" />
+                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="98.0" minWidth="6.0" prefWidth="18.0" />
+                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="134.0" minWidth="10.0" prefWidth="120.0" />
+                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="134.0" minWidth="10.0" prefWidth="18.0" />
+                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="198.0" minWidth="10.0" prefWidth="120.0" />
+                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="198.0" minWidth="10.0" prefWidth="18.0" />
+                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="143.0" minWidth="10.0" prefWidth="120.0" />
+                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <children>
+                  <Button fx:id="btnValider" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#validerOnAction" prefHeight="33.0" prefWidth="108.0" stylesheets="@../../Styles/css/FigureDeStyle.css" text="Valider" GridPane.columnIndex="4" />
+                  <Button fx:id="btnRafraichir" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#rafraichirOnAction" prefHeight="33.0" prefWidth="108.0" stylesheets="@../../Styles/css/FigureDeStyle.css" text="Rafraîchir" GridPane.columnIndex="6" />
+               </children>
+            </GridPane>
+            <GridPane layoutY="463.0" prefHeight="45.0" prefWidth="980.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+               <columnConstraints>
+                  <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" maxWidth="253.0" minWidth="10.0" prefWidth="208.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="586.0" minWidth="10.0" prefWidth="79.0" />
+                  <ColumnConstraints halignment="LEFT" hgrow="SOMETIMES" maxWidth="587.0" minWidth="10.0" prefWidth="74.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="492.0" minWidth="10.0" prefWidth="81.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="492.0" minWidth="10.0" prefWidth="236.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="540.0" minWidth="10.0" prefWidth="108.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="491.0" minWidth="10.0" prefWidth="168.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="382.0" minWidth="0.0" prefWidth="28.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints maxHeight="24.0" minHeight="9.0" prefHeight="9.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="45.0" minHeight="10.0" prefHeight="43.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <children>
+                  <TextField fx:id="montantTotalField" alignment="CENTER" disable="true" prefHeight="25.0" prefWidth="115.0" promptText="Montant Total" GridPane.columnIndex="6" GridPane.rowIndex="1" />
+                  <Label prefHeight="17.0" prefWidth="109.0" text="Montant Total: " GridPane.columnIndex="5" GridPane.rowIndex="1">
+                     <font>
+                        <Font name="Nyala" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label prefHeight="17.0" prefWidth="191.0" text="Etat de Validation Chéque : " GridPane.rowIndex="1">
+                     <font>
+                        <Font name="Nyala" size="18.0" />
+                     </font>
+                  </Label>
+                  <RadioButton fx:id="impayeRadio" mnemonicParsing="false" onAction="#impayeOnAction" prefHeight="20.0" prefWidth="75.0" text="Impayé" GridPane.columnIndex="3" GridPane.rowIndex="1">
+                     <font>
+                        <Font name="Nyala" size="15.0" />
+                     </font>
+                     <toggleGroup>
+                        <ToggleGroup fx:id="payeImpaye" />
+                     </toggleGroup>
+                  </RadioButton>
+                  <RadioButton id="categorie" fx:id="payerRadio" mnemonicParsing="false" onAction="#payerOnAction" text="Payé" toggleGroup="$payeImpaye" wrapText="true" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                     <font>
+                        <Font name="Nyala" size="15.0" />
+                     </font>
+                  </RadioButton>
+                  <RadioButton fx:id="verseRadio" mnemonicParsing="false" onAction="#verseOnAction" prefHeight="20.0" prefWidth="75.0" text="Versé" toggleGroup="$payeImpaye" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                     <font>
+                        <Font name="Nyala" size="15.0" />
+                     </font>
+                  </RadioButton>
+               </children>
+            </GridPane>
+            <GridPane prefHeight="150.0" prefWidth="980.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <columnConstraints>
+                  <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" maxWidth="156.0" minWidth="10.0" prefWidth="136.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="181.0" minWidth="0.0" prefWidth="20.0" />
+                  <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" maxWidth="310.0" minWidth="10.0" prefWidth="102.0" />
+                  <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" maxWidth="358.0" minWidth="10.0" prefWidth="196.0" />
+                  <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" maxWidth="350.0" minWidth="10.0" prefWidth="185.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="291.0" minWidth="8.0" prefWidth="196.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="291.0" minWidth="10.0" prefWidth="134.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints maxHeight="54.0" minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="35.0" minHeight="10.0" prefHeight="27.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="36.0" minHeight="10.0" prefHeight="22.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="52.0" minHeight="10.0" prefHeight="52.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <children>
+                  <ImageView fx:id="rechercheBtn" fitHeight="32.0" fitWidth="32.0" onMouseClicked="#rechercheArticle" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                     <image>
+                        <Image url="@../../Styles/img/magnifying-glass-icon.png" />
+                     </image>
+                  </ImageView>
+                  <Label prefHeight="17.0" prefWidth="128.0" text="Recherche Chéque" GridPane.rowIndex="3">
+                     <font>
+                        <Font name="Nyala" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label prefHeight="17.0" prefWidth="98.0" text="Type Chéque:" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                     <font>
+                        <Font name="Nyala" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label prefHeight="17.0" prefWidth="109.0" text="Date Échéance:" GridPane.columnIndex="4" GridPane.rowIndex="1">
+                     <font>
+                        <Font name="Nyala" size="18.0" />
+                     </font>
+                  </Label>
+                  <ComboBox fx:id="typeChequeCombo" onAction="#TypeChequeComboOnAction" prefHeight="25.0" prefWidth="207.0" promptText="Sélectionner..." GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                  <DatePicker fx:id="dateEchance" prefHeight="25.0" prefWidth="197.0" promptText="Sélectionner Date..." GridPane.columnIndex="5" GridPane.rowIndex="1" />
+               </children>
+            </GridPane>
+            <GridPane layoutY="508.0" prefHeight="123.0" prefWidth="980.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+               <columnConstraints>
+                  <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" maxWidth="236.0" minWidth="10.0" prefWidth="138.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="227.0" minWidth="10.0" prefWidth="162.0" />
+                  <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" maxWidth="236.0" minWidth="10.0" prefWidth="138.0" />
+                  <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" maxWidth="227.0" minWidth="10.0" prefWidth="169.0" />
+                  <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" maxWidth="236.0" minWidth="10.0" prefWidth="142.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="227.0" minWidth="10.0" prefWidth="162.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="227.0" minWidth="10.0" prefWidth="21.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints maxHeight="67.0" minHeight="10.0" prefHeight="25.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="52.0" minHeight="10.0" prefHeight="38.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="52.0" minHeight="10.0" prefHeight="38.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="67.0" minHeight="10.0" prefHeight="25.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <children>
+                  <Label prefHeight="17.0" prefWidth="119.0" text="Date Versement: " GridPane.rowIndex="2">
+                     <font>
+                        <Font name="Nyala" size="18.0" />
+                     </font>
+                  </Label>
+                  <DatePicker fx:id="dateVersement" prefHeight="25.0" prefWidth="179.0" promptText="Sélectionner Date..." GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <ComboBox fx:id="etatCombo" onAction="#etatOnAction" prefHeight="25.0" prefWidth="176.0" promptText="Sélectionner..." GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <Label prefHeight="17.0" prefWidth="40.0" text="Etat: " GridPane.rowIndex="1">
+                     <font>
+                        <Font name="Nyala" size="18.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="numRemiseField" alignment="CENTER" prefHeight="25.0" prefWidth="156.0" promptText="Num Remise" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                  <Label prefHeight="17.0" prefWidth="98.0" text="Num Remise: " GridPane.columnIndex="2" GridPane.rowIndex="1">
+                     <font>
+                        <Font name="Nyala" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label prefHeight="17.0" prefWidth="122.0" text="Num Versement: " GridPane.columnIndex="4" GridPane.rowIndex="1">
+                     <font>
+                        <Font name="Nyala" size="18.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="numVersementField" alignment="CENTER" promptText="Num Versement" GridPane.columnIndex="5" GridPane.rowIndex="1" />
+                  <ComboBox fx:id="compteCombo" prefHeight="25.0" prefWidth="183.0" promptText="Sélectionner..." GridPane.columnIndex="3" GridPane.rowIndex="2" />
+                  <Label prefHeight="17.0" prefWidth="68.0" text="Compte: " GridPane.columnIndex="2" GridPane.rowIndex="2">
+                     <font>
+                        <Font name="Nyala" size="18.0" />
+                     </font>
+                  </Label>
+               </children>
+            </GridPane>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

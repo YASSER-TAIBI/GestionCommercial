@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.effect.Reflection?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="749.0" prefWidth="1302.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.Referentiel.ChequeController">
+   <children>
+      <AnchorPane prefHeight="749.0" prefWidth="373.0" style="-fx-background-color: #17BBA6;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label layoutX="53.0" layoutY="35.0" prefHeight="52.0" prefWidth="267.0" text="Liste Chéque" textFill="WHITE">
+               <font>
+                  <Font name="Nyala" size="55.0" />
+               </font>
+               <effect>
+                  <Reflection fraction="0.5" />
+               </effect>
+            </Label>
+            <GridPane layoutY="154.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="496.0" prefWidth="373.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+              <columnConstraints>
+                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="181.0" minWidth="0.0" prefWidth="31.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="307.0" minWidth="10.0" prefWidth="307.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="223.0" minWidth="10.0" prefWidth="34.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <TextField fx:id="numchequefield" alignment="CENTER" prefHeight="33.0" prefWidth="251.0" promptText="N° Chéque" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                     <font>
+                        <Font name="Nyala" size="20.0" />
+                     </font></TextField>
+                  <TextField fx:id="nomfield" alignment="CENTER" prefHeight="33.0" prefWidth="251.0" promptText="Nom Proprietaire" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                     <font>
+                        <Font name="Nyala" size="20.0" />
+                     </font></TextField>
+                  <ComboBox fx:id="combobanque" prefHeight="33.0" prefWidth="308.0" promptText="Sélectionner Banque..." styleClass="label1" stylesheets="@../../Styles/css/FigureDeStyle.css" GridPane.columnIndex="1" GridPane.rowIndex="9" />
+                  <Label fx:id="codeerreur" prefHeight="20.0" prefWidth="307.0" styleClass="labelerreur" textFill="#ee0404" GridPane.columnIndex="1" />
+                  <Label fx:id="montanterreur" prefHeight="20.0" prefWidth="307.0" styleClass="labelerreur" textFill="#e80808" GridPane.columnIndex="1" GridPane.rowIndex="20" />
+                  <ComboBox fx:id="comboClient" prefHeight="33.0" prefWidth="308.0" promptText="Sélectionner Client..." styleClass="label1" stylesheets="@../../Styles/css/FigureDeStyle.css" GridPane.columnIndex="1" GridPane.rowIndex="17" />
+                  <ComboBox fx:id="comboTypeCheque" prefHeight="33.0" prefWidth="307.0" promptText="Sélectionner Type Chéque..." styleClass="label1" stylesheets="@../../Styles/css/FigureDeStyle.css" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+                  <DatePicker fx:id="dateEcheance" prefHeight="33.0" prefWidth="319.0" promptText="Sélectionner Date Échéance... " styleClass="label1" stylesheets="@../../Styles/css/FigureDeStyle.css" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                  <ComboBox fx:id="comboVendeur" onAction="#comboVendeur" prefHeight="33.0" prefWidth="308.0" promptText="Sélectionner Vendeur..." styleClass="label1" stylesheets="@../../Styles/css/FigureDeStyle.css" GridPane.columnIndex="1" GridPane.rowIndex="15" />
+                  <TextField fx:id="montantfield" alignment="CENTER" prefHeight="33.0" prefWidth="251.0" promptText="Montant" GridPane.columnIndex="1" GridPane.rowIndex="19">
+                     <font>
+                        <Font name="Nyala" size="20.0" />
+                     </font>
+                  </TextField>
+                  <ComboBox fx:id="comboVille" onAction="#villeOnAction" prefHeight="33.0" prefWidth="308.0" promptText="Sélectionner Ville..." styleClass="label1" stylesheets="@../../Styles/css/FigureDeStyle.css" GridPane.columnIndex="1" GridPane.rowIndex="11" />
+                  <ComboBox fx:id="comboSecteur" onAction="#secteurOnAction" prefHeight="33.0" prefWidth="308.0" promptText="Sélectionner Secteur..." styleClass="label1" stylesheets="@../../Styles/css/FigureDeStyle.css" GridPane.columnIndex="1" GridPane.rowIndex="13" />
+               </children>
+            </GridPane>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="374.0" prefHeight="749.0" prefWidth="756.0" style="-fx-background-color: #FFFFFF;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="374.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <TableView fx:id="chequeTable" layoutY="173.0" onMouseClicked="#afficherArt" prefHeight="407.0" prefWidth="928.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+              <columns>
+                <TableColumn fx:id="numchequeColumn" prefWidth="93.0" text="Num Chéque" />
+                  <TableColumn fx:id="nomProprietaireColumn" prefWidth="123.0" text="Nom " />
+                  <TableColumn fx:id="TypeChequeColumn" prefWidth="83.0" text="Type Chéque" />
+                  <TableColumn fx:id="banqueColumn" prefWidth="107.0" text="Banque" />
+                  <TableColumn fx:id="clientColumn" prefWidth="97.0" text="Client" />
+                  <TableColumn fx:id="secteurColumn" minWidth="0.0" prefWidth="86.0" text="Secteur" />
+                  <TableColumn fx:id="vendeurColumn" prefWidth="95.0" text="Vendeur" />
+                  <TableColumn fx:id="dateEcheanceColumn" prefWidth="92.0" text="Date Echéance" />
+                  <TableColumn fx:id="montantchequeColumn" minWidth="0.0" prefWidth="98.0" text="Montant" />
+                  <TableColumn fx:id="actionChequeColumn" prefWidth="53.0" text="Action" />
+              </columns>
+            </TableView>
+            <GridPane layoutX="3.0" layoutY="1.0" prefHeight="171.0" prefWidth="928.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+              <columnConstraints>
+                  <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" maxWidth="256.0" minWidth="10.0" prefWidth="127.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="328.0" minWidth="10.0" prefWidth="76.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="179.0" minWidth="10.0" prefWidth="65.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="261.0" minWidth="10.0" prefWidth="176.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="219.0" minWidth="0.0" prefWidth="69.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="359.0" minWidth="10.0" prefWidth="73.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="491.0" minWidth="10.0" prefWidth="65.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="452.0" minWidth="10.0" prefWidth="118.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="452.0" minWidth="10.0" prefWidth="118.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="452.0" minWidth="10.0" prefWidth="57.0" />
+              </columnConstraints>
+              <rowConstraints>
+                  <RowConstraints maxHeight="61.0" minHeight="6.0" prefHeight="15.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="67.0" minHeight="10.0" prefHeight="35.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="67.0" minHeight="10.0" prefHeight="19.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="77.0" minHeight="10.0" prefHeight="19.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="83.0" minHeight="10.0" prefHeight="19.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="97.0" minHeight="6.0" prefHeight="20.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="110.0" minHeight="10.0" prefHeight="35.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="110.0" minHeight="9.0" prefHeight="9.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <RadioButton fx:id="remiseRadio" mnemonicParsing="false" onAction="#remiseRadioOnAction" prefHeight="33.0" prefWidth="62.0" text="Remise" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                     <toggleGroup>
+                        <ToggleGroup fx:id="etatGroupe" />
+                     </toggleGroup>
+                  </RadioButton>
+                  <CheckBox fx:id="versementCheck" mnemonicParsing="false" onAction="#versementCheckOnAction" text="Versement" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+                  <CheckBox fx:id="paiementCheck" mnemonicParsing="false" onAction="#paiementCheckOnAction" prefHeight="17.0" prefWidth="78.0" text="Paiement" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+                  <CheckBox fx:id="impayeCheck" mnemonicParsing="false" onAction="#impayeCheckOnAction" text="Impayé" GridPane.columnIndex="3" GridPane.rowIndex="4" />
+                  <CheckBox fx:id="chequeImpayeCheck" mnemonicParsing="false" onAction="#chequeImpayeCheckOnAction" text="Traitement Chéque Impayé: " GridPane.columnIndex="3" GridPane.rowIndex="5" />
+                  <RadioButton fx:id="retourChequeRadio" mnemonicParsing="false" text="Retour" GridPane.columnIndex="4" GridPane.rowIndex="5">
+                     <toggleGroup>
+                        <ToggleGroup fx:id="impayeEtatGroupe" />
+                     </toggleGroup>
+                  </RadioButton>
+                  <RadioButton fx:id="avocatChequeRadio" mnemonicParsing="false" text="Avocat" toggleGroup="$impayeEtatGroupe" GridPane.columnIndex="5" GridPane.rowIndex="5" />
+                  <RadioButton fx:id="retourRadio" mnemonicParsing="false" onAction="#retourRadioOnAction" prefHeight="33.0" prefWidth="87.0" text="Retour" toggleGroup="$etatGroupe" GridPane.columnIndex="6" GridPane.rowIndex="1" />
+                  <CheckBox fx:id="especeCheck" mnemonicParsing="false" onAction="#especeCheckOnAction" text="Payer Espèce" GridPane.columnIndex="7" GridPane.rowIndex="2" />
+                  <Label text="Suivi Chéque:  " GridPane.rowIndex="1">
+                     <font>
+                        <Font name="Nyala" size="19.0" />
+                     </font>
+                  </Label>
+                  <ImageView fx:id="rechercheBtn" fitHeight="32.0" fitWidth="32.0" onMouseClicked="#suiviCheque" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                     <image>
+                        <Image url="@../../Styles/img/clipboard-icon.png" />
+                     </image>
+                  </ImageView>
+                  <Label fx:id="labelCheque" text="Retour Chéque: " GridPane.columnIndex="8" GridPane.rowIndex="1">
+                     <font>
+                        <Font name="Nyala" size="19.0" />
+                     </font>
+                  </Label>
+                  <ImageView fx:id="retourListeCheque" fitHeight="32.0" fitWidth="32.0" onMouseClicked="#ListeCheque" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="9" GridPane.rowIndex="1">
+                     <image>
+                        <Image url="@../../Styles/img/frames-icon.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </GridPane>
+            <GridPane layoutY="606.0" prefHeight="98.0" prefWidth="928.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+               <columnConstraints>
+                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="120.0" minWidth="10.0" prefWidth="120.0" />
+                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="98.0" minWidth="6.0" prefWidth="18.0" />
+                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="134.0" minWidth="10.0" prefWidth="120.0" />
+                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="134.0" minWidth="10.0" prefWidth="18.0" />
+                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="198.0" minWidth="10.0" prefWidth="120.0" />
+                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="198.0" minWidth="10.0" prefWidth="18.0" />
+                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="143.0" minWidth="10.0" prefWidth="120.0" />
+                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <children>
+                  <Button fx:id="btnAjouter" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#ajouterOnAction" prefHeight="33.0" prefWidth="108.0" stylesheets="@../../Styles/css/FigureDeStyle.css" text="Ajouter" GridPane.columnIndex="2" />
+                  <Button fx:id="btnRafraichir" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#rafraichirOnAction" prefHeight="33.0" prefWidth="108.0" stylesheets="@../../Styles/css/FigureDeStyle.css" text="Rafraîchir" GridPane.columnIndex="8" />
+                  <Button fx:id="btnSupprimer" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#supprimerOnAction" prefHeight="33.0" prefWidth="108.0" stylesheets="@../../Styles/css/FigureDeStyle.css" text="Supprimer" GridPane.columnIndex="6" />
+                  <Button fx:id="btnModifer" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#modifierOnAction" prefHeight="33.0" prefWidth="108.0" stylesheets="@../../Styles/css/FigureDeStyle.css" text="Modifier" GridPane.columnIndex="4" />
+               </children>
+            </GridPane>
+            <GridPane layoutY="580.0" prefHeight="71.0" prefWidth="928.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+               <columnConstraints>
+                  <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" maxWidth="194.0" minWidth="10.0" prefWidth="168.0" />
+                  <ColumnConstraints halignment="LEFT" hgrow="SOMETIMES" maxWidth="192.0" minWidth="10.0" prefWidth="45.0" />
+                  <ColumnConstraints halignment="LEFT" hgrow="SOMETIMES" maxWidth="158.0" minWidth="10.0" prefWidth="69.0" />
+                  <ColumnConstraints halignment="LEFT" hgrow="SOMETIMES" maxWidth="133.0" minWidth="10.0" prefWidth="110.0" />
+                  <ColumnConstraints halignment="LEFT" hgrow="SOMETIMES" maxWidth="129.0" minWidth="10.0" prefWidth="113.0" />
+                  <ColumnConstraints halignment="LEFT" hgrow="SOMETIMES" maxWidth="120.0" minWidth="10.0" prefWidth="114.0" />
+                  <ColumnConstraints halignment="LEFT" hgrow="SOMETIMES" maxWidth="148.0" minWidth="10.0" prefWidth="130.0" />
+                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="95.0" minWidth="6.0" prefWidth="40.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="206.0" minWidth="0.0" prefWidth="49.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="159.0" minWidth="10.0" prefWidth="84.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints maxHeight="52.0" minHeight="10.0" prefHeight="42.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="52.0" minHeight="10.0" prefHeight="29.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <children>
+                  <TextField fx:id="montantCheque" alignment="CENTER" disable="true" prefHeight="15.0" prefWidth="73.0" GridPane.columnIndex="2">
+                     <font>
+                        <Font name="Nyala" size="19.0" />
+                     </font>
+                  </TextField>
+                  <Label fx:id="nombreCheque" prefHeight="23.0" prefWidth="152.0" text="Nombre de Chéque:  ">
+                     <font>
+                        <Font name="Nyala" size="19.0" />
+                     </font>
+                  </Label>
+                  <ImageView fx:id="validerCheque" fitHeight="32.0" fitWidth="32.0" onMouseClicked="#validerCheque" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="8">
+                     <image>
+                        <Image url="@../../Styles/img/stack-icon.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="imprimer" fitHeight="32.0" fitWidth="32.0" onMouseClicked="#imprimerCheque" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="9">
+                     <image>
+                        <Image url="@../../Styles/img/document-icon%20(1).png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="calculeCheque" fitHeight="32.0" fitWidth="32.0" onMouseClicked="#calculeCheque" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1">
+                     <image>
+                        <Image url="@../../Styles/img/calculator-icon.png" />
+                     </image>
+                  </ImageView>
+                  <Label fx:id="nombreCheque1" prefHeight="23.0" prefWidth="152.0" text="Montant Tolal:" GridPane.columnIndex="5">
+                     <font>
+                        <Font name="Nyala" size="19.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="montantTotal" disable="true" prefHeight="27.0" prefWidth="105.0" GridPane.columnIndex="6" />
+               </children>
+            </GridPane>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

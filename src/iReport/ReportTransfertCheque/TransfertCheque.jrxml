@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="4ac51980-03d9-4fd1-87b7-a16a5f56e971">
+	<property name="ireport.zoom" value="1.5"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<property name="net.sf.jasperreports.awt.ignore.missing.font" value="true"/>
+	<parameter name="codeTransfert" class="java.lang.String"/>
+	<parameter name="nombreCheque" class="java.lang.String"/>
+	<field name="typeCheque" class="java.lang.String"/>
+	<field name="num_cheque" class="java.lang.String"/>
+	<field name="nom_Proprietaire" class="java.lang.String"/>
+	<field name="montant" class="java.math.BigDecimal"/>
+	<field name="banque.libelle" class="java.lang.String"/>
+	<title>
+		<band height="105" splitType="Stretch">
+			<rectangle radius="10">
+				<reportElement x="99" y="48" width="361" height="26" backcolor="#00BBB1" uuid="5117c0d0-eaf9-4505-a290-71697ab40d35"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="152" y="47" width="255" height="26" uuid="1211eb68-fd69-4f07-830e-4cda05d34026"/>
+				<textElement textAlignment="Center" verticalAlignment="Top">
+					<font size="20" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Transfert Cheque]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="112" splitType="Stretch">
+			<staticText>
+				<reportElement x="31" y="45" width="138" height="20" uuid="b6f1b7df-f2a1-4576-a31d-11f75b810ecc"/>
+				<textElement verticalAlignment="Middle">
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Code Transfert Cheque: ]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="169" y="45" width="100" height="20" uuid="0230f6e6-88b6-4a0d-b066-f5416dc8973e"/>
+				<textElement verticalAlignment="Middle">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{codeTransfert}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="31" y="68" width="138" height="20" uuid="c73fda88-553b-43a3-8cf2-b48f3df5860f"/>
+				<textElement verticalAlignment="Middle">
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nombre de Cheque: ]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="169" y="68" width="100" height="20" uuid="22288835-db3e-429b-997b-3210acdb07ef"/>
+				<textElement verticalAlignment="Middle">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{nombreCheque}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="20" splitType="Stretch">
+			<rectangle radius="10">
+				<reportElement x="11" y="0" width="532" height="20" backcolor="#00BBB1" uuid="fdd180b3-01cd-49f2-b28c-f3aa1caabe76"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="29" y="0" width="88" height="20" uuid="c5cfd33d-150c-45a7-9520-00e58165e918"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Num Cheque]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="128" y="0" width="99" height="20" uuid="1cd3e142-5d4b-41ab-ab97-9666f8d21ec9"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nom Proprietaire]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="439" y="0" width="88" height="20" uuid="9d016c4a-b648-4fb8-8cee-bfcf0d032f36"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Montant]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="239" y="0" width="88" height="20" uuid="9ad27aa2-4dee-4c37-b7e1-3d33b5035559"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Type Cheque]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="339" y="0" width="88" height="20" uuid="f2ce56f9-9b84-439d-832d-359b92b34880"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Banque]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="23" splitType="Stretch">
+			<textField>
+				<reportElement x="29" y="3" width="88" height="20" uuid="87299f24-013c-411e-8c79-6c7e24ff7501"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{num_cheque}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="439" y="3" width="88" height="20" uuid="b0a04d58-8cc3-4081-92bc-a8f3e6929db9"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{montant}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="339" y="3" width="88" height="20" uuid="9979bda3-bb34-40e6-a94c-1fb700e33de9"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{banque.libelle}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="128" y="3" width="88" height="20" uuid="dccfa4ae-5b4f-40b7-b495-4691608d415e"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nom_Proprietaire}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="239" y="3" width="88" height="20" uuid="774ad24f-62b5-45b1-adb1-c8dfb01abfac"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{typeCheque}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<summary>
+		<band height="38">
+			<rectangle>
+				<reportElement x="11" y="3" width="532" height="3" backcolor="#00BBB1" uuid="2d460853-46c0-4b45-8706-9963a1fc9ec0"/>
+			</rectangle>
+		</band>
+	</summary>
+</jasperReport>

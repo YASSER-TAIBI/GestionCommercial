@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.Reflection?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" fx:id="anchorPane" prefHeight="587.0" prefWidth="669.0" style="-fx-background-color: #FFFFFF;" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.Vente.DetailMontantController">
+   <children>
+      <TableView fx:id="DetailCompteTable" layoutY="222.0" onMouseClicked="#afficherArt" prefHeight="257.0" prefWidth="669.0" styleClass="label" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+         <columns>
+            <TableColumn fx:id="compteVendeurColumn" prefWidth="124.0" text="Compte Vendeur" />
+            <TableColumn fx:id="designationColumn" prefWidth="359.0" text="Designation" />
+            <TableColumn fx:id="montantDebitColumn" prefWidth="90.0" text="Montant Debit" />
+            <TableColumn fx:id="montantCreditColumn" prefWidth="95.0" text="Montant Credit" />
+         </columns>
+      </TableView>
+      <GridPane layoutX="5.0" layoutY="513.0" prefHeight="86.0" prefWidth="668.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+         <columnConstraints>
+            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+         </rowConstraints>
+         <children>
+            <ImageView fx:id="validerBtn" fitHeight="50.0" fitWidth="50.0" onMouseClicked="#valider" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3">
+               <image>
+                  <Image url="@../../Styles/img/check-icon.png" />
+               </image>
+               <effect>
+                  <Reflection fraction="0.67" />
+               </effect>
+            </ImageView>
+            <ImageView fx:id="RefrechBtn" fitHeight="50.0" fitWidth="50.0" onMouseClicked="#refrech" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4">
+               <image>
+                  <Image url="@../../Styles/img/colorwheel-icon.png" />
+               </image>
+               <effect>
+                  <Reflection fraction="0.67" />
+               </effect>
+            </ImageView>
+            <ImageView fx:id="fermerBtn" fitHeight="50.0" fitWidth="50.0" onMouseClicked="#fermer" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="5">
+               <image>
+                  <Image url="@../../Styles/img/magnifying-glass-1083378_640-ConvertImage.png" />
+               </image>
+               <effect>
+                  <Reflection fraction="0.67" />
+               </effect>
+            </ImageView>
+         </children>
+      </GridPane>
+      <Label layoutX="22.0" layoutY="46.0" prefHeight="17.0" prefWidth="125.0" text="Compte Vendeur: ">
+         <font>
+            <Font name="Nyala" size="18.0" />
+         </font>
+      </Label>
+      <ComboBox fx:id="compteVendeurCombo" layoutX="157.0" layoutY="42.0" prefHeight="25.0" prefWidth="174.0" promptText="Sélectionner..." />
+      <Label layoutX="344.0" layoutY="46.0" prefHeight="17.0" prefWidth="112.0" text="Date Operation:">
+         <font>
+            <Font name="Nyala" size="18.0" />
+         </font>
+      </Label>
+      <DatePicker fx:id="dateOperation" layoutX="466.0" layoutY="42.0" />
+      <Label layoutX="56.0" layoutY="97.0" prefHeight="17.0" prefWidth="92.0" text="Designation:">
+         <font>
+            <Font name="Nyala" size="18.0" />
+         </font>
+      </Label>
+      <TextArea fx:id="designation" layoutX="157.0" layoutY="93.0" prefHeight="58.0" prefWidth="219.0" />
+      <TextField fx:id="montantDebit" layoutX="157.0" layoutY="178.0" onMouseClicked="#montantDebitOnMouse" />
+      <TextField fx:id="montantCredit" layoutX="466.0" layoutY="178.0" onMouseClicked="#montantCreditOnMouse" />
+      <Label layoutX="36.0" layoutY="182.0" prefHeight="17.0" prefWidth="112.0" text="Montant Debit:">
+         <font>
+            <Font name="Nyala" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="345.0" layoutY="182.0" prefHeight="17.0" prefWidth="112.0" text="Montant Credit:">
+         <font>
+            <Font name="Nyala" size="18.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER_RIGHT" layoutX="413.0" layoutY="97.0" prefHeight="17.0" prefWidth="43.0" text="Etat: ">
+         <font>
+            <Font name="Nyala" size="18.0" />
+         </font>
+      </Label>
+      <ComboBox fx:id="etatCombo" layoutX="466.0" layoutY="93.0" prefHeight="25.0" prefWidth="174.0" promptText="Sélectionner..." />
+   </children>
+</AnchorPane>

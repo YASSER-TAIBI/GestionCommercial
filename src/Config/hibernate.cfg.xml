@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+  <session-factory>
+    <property name="hibernate.dialect">org.hibernate.dialect.MySQL5Dialect</property>
+    <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+    
+     <!--  
+    <property name="hibernate.connection.url">jdbc:mysql://192.168.1.11:3307/GESTION_COMMERCIAL</property>
+    <property name="hibernate.connection.username">user</property>
+    <property name="hibernate.connection.password">!kal!0687*</property>
+     -->
+    
+    <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/GESTION_COMMERCIALE</property>
+    <property name="hibernate.connection.username">root</property>
+    <property name="hibernate.connection.password">root</property>
+     
+
+    <property name="hibernate.current_session_context_class">thread</property>
+    <property name="cache.provider_class">org.hibernate.cache.NoCacheProvider</property>
+    <property name="hbm2ddl.auto">update</property>
+    <property name="show_sql">true</property>
+    <mapping class="dao.Entity.Utilisateur"/>
+    <mapping class="dao.Entity.Vendeur"/>
+    <mapping class="dao.Entity.TypeMagasin"/>
+    <mapping class="dao.Entity.Secteur"/>
+    <mapping class="dao.Entity.Magasin"/>
+    <mapping class="dao.Entity.Ville"/>
+    <mapping class="dao.Entity.Depot"/>
+    <mapping class="dao.Entity.ClientPF"/>
+    <mapping class="dao.Entity.Article"/>
+    <mapping class="dao.Entity.Banque"/>
+    <mapping class="dao.Entity.Cheque"/>
+    <mapping class="dao.Entity.Menu"/>
+    <mapping class="dao.Entity.Habilitation"/>
+    <mapping class="dao.Entity.Vehicule"/>
+    <mapping class="dao.Entity.DetailTransfertStock"/>
+    <mapping class="dao.Entity.TransfertStock"/>
+    <mapping class="dao.Entity.Chauffeur"/>
+    <mapping class="dao.Entity.Tournee"/>
+    <mapping class="dao.Entity.TypeVente"/>
+    <mapping class="dao.Entity.DetailTournee"/>
+    <mapping class="dao.Entity.DetailVenteMixte"/>
+    <mapping class="dao.Entity.VenteMixte"/>
+    <mapping class="dao.Entity.Compte"/>
+    <mapping class="dao.Entity.DetailCompte"/>
+    <mapping class="dao.Entity.Versement"/>
+    <mapping class="dao.Entity.TransfertCheque"/>
+    <mapping class="dao.Entity.DetailTransfertCheque"/>
+    <mapping class="dao.Entity.Facture"/>
+    <mapping class="dao.Entity.DetailFacture"/>
+    <mapping class="dao.Entity.Sequenceur"/>
+    <mapping class="dao.Entity.SequenceurClient"/>
+    <mapping class="dao.Entity.SequenceurFacture"/>
+    <mapping class="dao.Entity.FamilleArticle"/>
+    <mapping class="dao.Entity.DetailFamilleArticle"/>
+    <mapping class="dao.Entity.SousFamilleArticle"/>
+    <mapping class="dao.Entity.DetailSousFamilleArticle"/>
+    <mapping class="dao.Entity.PrixVenteDepot"/>
+    <mapping class="dao.Entity.DetailVendeurSecteur"/>
+    <mapping class="dao.Entity.DetailChargeSupp"/>
+    <mapping class="dao.Entity.VersementBancaire"/>
+    <mapping class="dao.Entity.VersementCheque"/>
+    <mapping class="dao.Entity.Caissier"/>
+    <mapping class="dao.Entity.Fournisseur"/>
+    <mapping class="dao.Entity.DeclarationReception"/>
+    <mapping class="dao.Entity.VersementClient"/>
+    <mapping class="dao.Entity.VersementBancaireClient"/>
+    <mapping class="dao.Entity.VersementChequeClient"/>
+    <mapping class="dao.Entity.CompteClient"/>
+    <mapping class="dao.Entity.DetailCompteClient"/>
+    <mapping class="dao.Entity.AvanceChauffeur"/>
+    <mapping class="dao.Entity.DetailAvanceChauffeur"/>
+    <mapping class="dao.Entity.AvanceMagasinier"/>
+    <mapping class="dao.Entity.DetailAvanceMagasinier"/>
+    <mapping class="dao.Entity.CompteVersement"/>
+    <mapping class="dao.Entity.Offre"/>
+    <mapping class="dao.Entity.ConditionOffre"/>
+    <mapping class="dao.Entity.CreationOffre"/>
+    <mapping class="dao.Entity.DetailCaissierVendeur"/>
+  </session-factory>
+</hibernate-configuration>

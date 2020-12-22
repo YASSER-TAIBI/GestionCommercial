@@ -1,0 +1,378 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.effect.Reflection?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="749.0" prefWidth="1302.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.Vente.FacturationController">
+   <children>
+      <AnchorPane prefHeight="749.0" prefWidth="322.0" style="-fx-background-color: #17BBA6;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label alignment="CENTER" layoutY="47.0" prefHeight="48.0" prefWidth="322.0" styleClass="label1" text="Facturation" textFill="WHITE" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+               <font>
+                  <Font name="Nyala" size="50.0" />
+               </font>
+               <effect>
+                  <Reflection fraction="0.5" />
+               </effect>
+            </Label>
+            <GridPane layoutY="244.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="348.0" prefWidth="373.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+               <columnConstraints>
+                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="181.0" minWidth="0.0" prefWidth="30.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="307.0" minWidth="10.0" prefWidth="307.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="223.0" minWidth="10.0" prefWidth="30.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints />
+                  <RowConstraints maxHeight="24.0" minHeight="10.0" prefHeight="22.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="34.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="22.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="34.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="29.0" minHeight="10.0" prefHeight="22.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="45.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="38.0" minHeight="10.0" prefHeight="22.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="45.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="37.0" minHeight="10.0" prefHeight="22.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="44.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="38.0" minHeight="10.0" prefHeight="22.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="88.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="88.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <children>
+                  <DatePicker fx:id="dateFacture" prefHeight="33.0" prefWidth="312.0" promptText="Date Facture" styleClass="label1" stylesheets="@../../Styles/css/FigureDeStyle.css" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <ComboBox fx:id="magasinCombo" onAction="#magasinComboOnAction" prefHeight="96.0" prefWidth="292.0" promptText="Sélectionner Magasin..." styleClass="label1" stylesheets="@../../Styles/css/FigureDeStyle.css" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                  <ComboBox fx:id="tourneeCombo" onAction="#tourneeComboOnAction" prefHeight="37.0" prefWidth="292.0" promptText="Sélectionner Tournée..." styleClass="label1" stylesheets="@../../Styles/css/FigureDeStyle.css" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+                  <ComboBox fx:id="vendeurCombo" onAction="#vendeurComboOnAction" prefHeight="33.0" prefWidth="316.0" promptText="Sélectionner Vendeur..." styleClass="label1" stylesheets="@../../Styles/css/FigureDeStyle.css" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                  <ComboBox fx:id="clientCombo" onAction="#clientComboOnAction" prefHeight="33.0" prefWidth="314.0" promptText="Sélectionner Client..." styleClass="label1" stylesheets="@../../Styles/css/FigureDeStyle.css" GridPane.columnIndex="1" GridPane.rowIndex="10" />
+                  <TextField fx:id="numClientField" alignment="CENTER" onKeyPressed="#codeEntreeTableKeyPressed" prefHeight="3.0" prefWidth="292.0" promptText="Num Client" GridPane.columnIndex="1" GridPane.rowIndex="12">
+                     <font>
+                        <Font name="Nyala" size="20.0" />
+                     </font>
+                  </TextField>
+               </children>
+            </GridPane>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="322.0" prefHeight="749.0" prefWidth="980.0" style="-fx-background-color: #FFFFFF;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="322.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <TableView fx:id="DetailFactureTable" layoutY="262.0" prefHeight="332.0" prefWidth="980.0" styleClass="label" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+              <columns>
+                <TableColumn fx:id="codeArticleColumn" prefWidth="81.0" text="Code Article" />
+                  <TableColumn fx:id="codeFactureColumn" prefWidth="85.0" text="Code Facture" />
+                <TableColumn fx:id="libelleColumn" prefWidth="255.0" text="Libelle" />
+                  <TableColumn fx:id="typeVenteColumn" prefWidth="74.0" text="Type Vente" />
+                  <TableColumn fx:id="categorieColumn" prefWidth="78.0" text="Categorie" />
+                  <TableColumn fx:id="quantiteColumn" prefWidth="88.0" text="Quantite" />
+                  <TableColumn fx:id="prixUnitaireColumn" prefWidth="87.0" text="Prix" />
+                  <TableColumn fx:id="remiseColumn" prefWidth="98.0" text="Remise" />
+                  <TableColumn fx:id="montantColumn" prefWidth="133.0" text="Montant " />
+              </columns>
+            </TableView>
+            <GridPane layoutY="-1.0" prefHeight="176.0" prefWidth="980.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+              <columnConstraints>
+                  <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" maxWidth="236.0" minWidth="10.0" prefWidth="119.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="227.0" minWidth="10.0" prefWidth="153.0" />
+                  <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" maxWidth="236.0" minWidth="10.0" prefWidth="119.0" />
+                  <ColumnConstraints halignment="LEFT" hgrow="SOMETIMES" maxWidth="227.0" minWidth="10.0" prefWidth="153.0" />
+                  <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" maxWidth="236.0" minWidth="10.0" prefWidth="119.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="255.0" minWidth="10.0" prefWidth="153.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="227.0" minWidth="10.0" prefWidth="36.0" />
+              </columnConstraints>
+              <rowConstraints>
+                  <RowConstraints maxHeight="67.0" minHeight="10.0" prefHeight="10.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="52.0" minHeight="10.0" prefHeight="36.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="66.0" minHeight="0.0" prefHeight="36.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="80.0" minHeight="10.0" prefHeight="36.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="73.0" minHeight="10.0" prefHeight="36.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Label prefHeight="17.0" prefWidth="94.0" text="Code Article:" GridPane.columnIndex="4" GridPane.rowIndex="1">
+                     <font>
+                        <Font name="Nyala" size="18.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="codeArticleField" alignment="CENTER" onKeyPressed="#codeArticleKeyPressed" prefHeight="25.0" prefWidth="148.0" promptText="Code Article" GridPane.columnIndex="5" GridPane.rowIndex="1" />
+                  <Label prefHeight="17.0" prefWidth="54.0" text="Libelle:" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                     <font>
+                        <Font name="Nyala" size="18.0" />
+                     </font>
+                  </Label>
+                  <ComboBox fx:id="ArticleCombo" onAction="#ArticleComboOnAction" prefHeight="25.0" prefWidth="173.0" promptText="Sélectionner..." GridPane.columnIndex="3" GridPane.rowIndex="2" />
+                  <Label prefHeight="17.0" prefWidth="89.0" text="Type Vente:" GridPane.rowIndex="3">
+                     <font>
+                        <Font name="Nyala" size="18.0" />
+                     </font>
+                  </Label>
+                  <ComboBox fx:id="typeVenteCombo" onAction="#TypeVenteComboOnAction" prefHeight="25.0" prefWidth="176.0" promptText="Sélectionner..." GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                  <TextField fx:id="quantiteField" alignment="CENTER" prefHeight="25.0" prefWidth="156.0" promptText="Quantité" GridPane.columnIndex="5" GridPane.rowIndex="2" />
+                  <Label prefHeight="17.0" prefWidth="71.0" text="Quantité: " GridPane.columnIndex="4" GridPane.rowIndex="2">
+                     <font>
+                        <Font name="Nyala" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label prefHeight="17.0" prefWidth="96.0" text="Prix Unitaire: " GridPane.columnIndex="2" GridPane.rowIndex="3">
+                     <font>
+                        <Font name="Nyala" size="18.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="prixUnitaireField" alignment="CENTER" disable="true" editable="false" prefHeight="25.0" prefWidth="156.0" promptText="Prix Unitaire" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+                  <Label prefHeight="17.0" prefWidth="100.0" text="Code Facture: " GridPane.rowIndex="2">
+                     <font>
+                        <Font name="Nyala" size="18.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="codeFactureField" alignment="CENTER" onKeyPressed="#codeFactureKeyPressed" prefHeight="25.0" prefWidth="148.0" promptText="Code Facture" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <ComboBox fx:id="typeRemiseCombo" onAction="#TypeRemiseComboOnAction" prefHeight="25.0" prefWidth="176.0" promptText="Sélectionner..." GridPane.columnIndex="5" GridPane.rowIndex="3" />
+                  <Label prefHeight="17.0" prefWidth="98.0" text="Type Remise:" GridPane.columnIndex="4" GridPane.rowIndex="3">
+                     <font>
+                        <Font name="Nyala" size="18.0" />
+                     </font>
+                  </Label>
+                  <ComboBox fx:id="remiseConstCombo" disable="true" onAction="#remiseConstComboOnAction" prefHeight="25.0" prefWidth="176.0" promptText="Sélectionner..." GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                  <Label prefHeight="17.0" prefWidth="123.0" text="Remise Constant:" GridPane.rowIndex="4">
+                     <font>
+                        <Font name="Nyala" size="18.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="remiseVarField" alignment="CENTER" disable="true" prefHeight="25.0" prefWidth="148.0" promptText="Remise Variable" GridPane.columnIndex="3" GridPane.rowIndex="4" />
+                  <Label prefHeight="17.0" prefWidth="118.0" text="Remise Variable: " GridPane.columnIndex="2" GridPane.rowIndex="4">
+                     <font>
+                        <Font name="Nyala" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label prefHeight="17.0" prefWidth="71.0" text="Montant:" GridPane.columnIndex="4" GridPane.rowIndex="4">
+                     <font>
+                        <Font name="Nyala" size="18.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="MontantField" alignment="CENTER" disable="true" editable="false" prefHeight="25.0" prefWidth="156.0" promptText="Montant " GridPane.columnIndex="5" GridPane.rowIndex="4" />
+                  <TextField fx:id="numFactureField" alignment="CENTER" disable="true" prefHeight="25.0" prefWidth="148.0" promptText="Num Facture" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <Label prefHeight="17.0" prefWidth="98.0" text="Num Facture:" GridPane.rowIndex="1">
+                     <font>
+                        <Font name="Nyala" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label prefHeight="17.0" prefWidth="91.0" text="Sans Article:" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                     <font>
+                        <Font name="Nyala" size="18.0" />
+                     </font>
+                  </Label>
+                  <CheckBox fx:id="sansArtCheckBox" mnemonicParsing="false" onAction="#sansArtCheckBoxOnAction" styleClass="table" stylesheets="@../../Styles/css/FigureDeStyle.css" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+               </children>
+            </GridPane>
+            <GridPane layoutY="214.0" prefHeight="48.0" prefWidth="928.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+               <columnConstraints>
+                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="624.0" minWidth="10.0" prefWidth="616.0" />
+                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="429.0" minWidth="10.0" prefWidth="47.0" />
+                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="471.0" minWidth="10.0" prefWidth="45.0" />
+                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="404.0" minWidth="10.0" prefWidth="45.0" />
+                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="314.0" minWidth="10.0" prefWidth="45.0" />
+                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="250.0" minWidth="10.0" prefWidth="45.0" />
+                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="186.0" minWidth="10.0" prefWidth="45.0" />
+                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="111.0" minWidth="10.0" prefWidth="40.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <children>
+                  <ImageView fx:id="ajoutBtn" fitHeight="32.0" fitWidth="32.0" onMouseClicked="#ajouter" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4">
+                     <image>
+                        <Image url="@../../Styles/img/check-icon.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="supprimerBtn" fitHeight="32.0" fitWidth="32.0" onMouseClicked="#Supprimer" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="5">
+                     <image>
+                        <Image url="@../../Styles/img/x-cross-icon.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="videBtn" fitHeight="32.0" fitWidth="32.0" onMouseClicked="#vider" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="6">
+                     <image>
+                        <Image url="@../../Styles/img/colorwheel-icon.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </GridPane>
+            <GridPane layoutY="594.0" prefHeight="86.0" prefWidth="980.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+              <columnConstraints>
+                  <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" maxWidth="158.0" minWidth="10.0" prefWidth="137.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" prefWidth="130.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="224.0" minWidth="10.0" prefWidth="82.0" />
+                  <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" maxWidth="137.0" minWidth="10.0" prefWidth="124.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="143.0" minWidth="10.0" prefWidth="131.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="593.0" minWidth="10.0" prefWidth="74.0" />
+                  <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" maxWidth="587.0" minWidth="10.0" prefWidth="138.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="204.0" minWidth="10.0" prefWidth="130.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="147.0" minWidth="0.0" prefWidth="36.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints maxHeight="47.0" minHeight="10.0" prefHeight="47.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="41.0" minHeight="10.0" prefHeight="24.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <TextField fx:id="sommeQuantiteField" alignment="CENTER" disable="true" prefHeight="25.0" prefWidth="182.0" promptText="Total Quantité" GridPane.columnIndex="1" />
+                  <TextField fx:id="montantTotalField" alignment="CENTER" disable="true" prefHeight="25.0" prefWidth="124.0" promptText="Total Montant" GridPane.columnIndex="7" />
+                  <Label prefHeight="17.0" prefWidth="110.0" text="Total Quantité:">
+                     <font>
+                        <Font name="Nyala" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label prefHeight="17.0" prefWidth="106.0" text="Total Montant:" GridPane.columnIndex="6">
+                     <font>
+                        <Font name="Nyala" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label prefHeight="17.0" prefWidth="110.0" text="Total Remise:" GridPane.columnIndex="3">
+                     <font>
+                        <Font name="Nyala" size="18.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="sommeRemiseField" alignment="CENTER" disable="true" prefHeight="25.0" prefWidth="182.0" promptText="Total Remise" GridPane.columnIndex="4" />
+                  <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="7" GridPane.rowIndex="1">
+                     <children>
+                        <ImageView fx:id="validerOffreBtn" fitHeight="35.0" fitWidth="36.0" onMouseClicked="#validerOffre" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../Styles/img/clipboard-icon.png" />
+                           </image>
+                           <HBox.margin>
+                              <Insets left="10.0" top="3.0" />
+                           </HBox.margin>
+                        </ImageView>
+                     </children>
+                  </HBox>
+                  <Label prefHeight="17.0" prefWidth="91.0" text="Valider Offre" GridPane.columnIndex="6" GridPane.rowIndex="1">
+                     <font>
+                        <Font name="Nyala" size="18.0" />
+                     </font>
+                  </Label>
+               </children>
+            </GridPane>
+            <GridPane layoutY="694.0" prefHeight="55.0" prefWidth="980.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+               <columnConstraints>
+                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="120.0" minWidth="10.0" prefWidth="120.0" />
+                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="98.0" minWidth="6.0" prefWidth="18.0" />
+                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="134.0" minWidth="10.0" prefWidth="120.0" />
+                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="134.0" minWidth="10.0" prefWidth="18.0" />
+                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="198.0" minWidth="10.0" prefWidth="120.0" />
+                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="198.0" minWidth="10.0" prefWidth="18.0" />
+                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="143.0" minWidth="10.0" prefWidth="120.0" />
+                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <children>
+                  <Button fx:id="btnAjouter" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#ajouterOnAction" prefHeight="33.0" prefWidth="108.0" stylesheets="@../../Styles/css/FigureDeStyle.css" text="Ajouter" GridPane.columnIndex="4" />
+                  <Button fx:id="btnRafraichir" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#rafraichirOnAction" prefHeight="33.0" prefWidth="108.0" stylesheets="@../../Styles/css/FigureDeStyle.css" text="Rafraîchir" GridPane.columnIndex="6" />
+               </children>
+            </GridPane>
+            <GridPane layoutY="176.0" prefHeight="37.0" prefWidth="980.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+              <columnConstraints>
+                  <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" maxWidth="159.0" minWidth="10.0" prefWidth="131.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="360.0" minWidth="10.0" prefWidth="266.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="233.0" minWidth="10.0" prefWidth="123.0" />
+                  <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" maxWidth="246.0" minWidth="10.0" prefWidth="87.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="413.0" minWidth="10.0" prefWidth="195.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="390.0" minWidth="10.0" prefWidth="61.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="316.0" minWidth="10.0" prefWidth="62.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Label prefHeight="17.0" prefWidth="77.0" text="Categorie: ">
+                     <font>
+                        <Font name="Nyala" size="18.0" />
+                     </font>
+                  </Label>
+                  <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1">
+                     <children>
+                        <RadioButton id="categorie" fx:id="categorieNormalRadio" mnemonicParsing="false" onAction="#categorieNormale" selected="true" text="Normal" wrapText="true">
+                           <font>
+                              <Font name="Nyala" size="15.0" />
+                           </font>
+                           <toggleGroup>
+                              <ToggleGroup fx:id="categorie" />
+                           </toggleGroup>
+                           <HBox.margin>
+                              <Insets right="5.0" />
+                           </HBox.margin>
+                        </RadioButton>
+                        <RadioButton fx:id="categorieGratuiteRadio" mnemonicParsing="false" onAction="#categorieGratuite" text="Gratuité" toggleGroup="$categorie">
+                           <font>
+                              <Font name="Nyala" size="15.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets left="5.0" right="5.0" />
+                           </HBox.margin>
+                        </RadioButton>
+                        <RadioButton fx:id="categorieOffreRadio" mnemonicParsing="false" onAction="#categorieOffre" prefHeight="20.0" prefWidth="60.0" text="Offre" textAlignment="CENTER" toggleGroup="$categorie">
+                           <font>
+                              <Font name="Nyala" size="15.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets left="5.0" />
+                           </HBox.margin>
+                        </RadioButton>
+                     </children>
+                     <GridPane.margin>
+                        <Insets />
+                     </GridPane.margin>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                  </HBox>
+                  <Label fx:id="remiseTexte" prefHeight="17.0" prefWidth="58.0" text="Remise:" GridPane.columnIndex="3">
+                     <font>
+                        <Font name="Nyala" size="18.0" />
+                     </font>
+                  </Label>
+                  <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="4">
+                     <children>
+                        <RadioButton id="categorie" fx:id="remiseSpecialeRadio" mnemonicParsing="false" text="Special" wrapText="true">
+                           <font>
+                              <Font name="Nyala" size="15.0" />
+                           </font>
+                           <toggleGroup>
+                              <ToggleGroup fx:id="remise" />
+                           </toggleGroup>
+                           <padding>
+                              <Insets right="5.0" />
+                           </padding>
+                        </RadioButton>
+                        <RadioButton id="categorie" fx:id="remiseEspeceRadio" mnemonicParsing="false" text="Espece" toggleGroup="$remise" wrapText="true">
+                           <font>
+                              <Font name="Nyala" size="15.0" />
+                           </font>
+                           <padding>
+                              <Insets left="5.0" />
+                           </padding>
+                        </RadioButton>
+                     </children>
+                  </HBox>
+               </children>
+            </GridPane>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

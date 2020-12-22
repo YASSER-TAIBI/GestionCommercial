@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.Reflection?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="749.0" prefWidth="1302.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.Vente.RetourController">
+   <children>
+      <AnchorPane prefHeight="749.0" prefWidth="322.0" style="-fx-background-color: #17BBA6;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label alignment="CENTER" layoutX="33.0" layoutY="44.0" prefHeight="37.0" prefWidth="257.0" styleClass="label1" text="Retour" textFill="WHITE">
+               <font>
+                  <Font name="Nyala" size="55.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" layoutX="73.0" layoutY="93.0" prefHeight="36.0" prefWidth="176.0" styleClass="label1" text="Tourneé" textFill="WHITE">
+               <font>
+                  <Font name="Nyala" size="55.0" />
+               </font>
+               <effect>
+                  <Reflection fraction="0.6" topOpacity="0.33" />
+               </effect>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="322.0" prefHeight="749.0" prefWidth="980.0" style="-fx-background-color: #FFFFFF;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="322.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <GridPane layoutY="650.0" prefHeight="55.0" prefWidth="928.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+               <columnConstraints>
+                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="120.0" minWidth="10.0" prefWidth="120.0" />
+                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="98.0" minWidth="6.0" prefWidth="18.0" />
+                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="134.0" minWidth="10.0" prefWidth="120.0" />
+                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="134.0" minWidth="10.0" prefWidth="18.0" />
+                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="198.0" minWidth="10.0" prefWidth="120.0" />
+                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="198.0" minWidth="10.0" prefWidth="18.0" />
+                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="143.0" minWidth="10.0" prefWidth="120.0" />
+                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <children>
+                  <Button fx:id="btnAjouter" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#ajouterOnAction" prefHeight="33.0" prefWidth="108.0" stylesheets="@../../Styles/css/FigureDeStyle.css" text="Valider" GridPane.columnIndex="4" />
+                  <Button fx:id="btnRafraichir" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#rafraichirOnAction" prefHeight="33.0" prefWidth="108.0" stylesheets="@../../Styles/css/FigureDeStyle.css" text="Rafraîchir" GridPane.columnIndex="6" />
+               </children>
+            </GridPane>
+            <TableView fx:id="tourneeTable" layoutY="115.0" onMouseClicked="#afficherArt" prefHeight="175.0" prefWidth="928.0" styleClass="label" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+               <columns>
+                  <TableColumn fx:id="dateTourneeColumn" prefWidth="254.0" text="Date Tourneé" />
+                  <TableColumn fx:id="vendeurColumn" prefWidth="177.0" text="Vendeur" />
+                  <TableColumn fx:id="secteurColumn" prefWidth="172.0" text="Secteur" />
+                  <TableColumn fx:id="magasinColumn" prefWidth="187.0" text="Magasin" />
+                  <TableColumn fx:id="etatColumn" prefWidth="137.0" text="Etat" />
+               </columns>
+            </TableView>
+            <TableView fx:id="detailTourneeTable" layoutY="333.0" prefHeight="284.0" prefWidth="928.0" styleClass="label" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+               <columns>
+                  <TableColumn fx:id="codeArticleColumn" prefWidth="78.0" text="Code" />
+                  <TableColumn fx:id="libelleColumn" prefWidth="212.0" text="Libelle" />
+                  <TableColumn fx:id="qteInitialColumn" prefWidth="90.0" text="Qté Initial" />
+                  <TableColumn fx:id="qteRecapeColumn" minWidth="2.0" prefWidth="90.0" text="Qté Recape" />
+                  <TableColumn fx:id="qteTotalChargeColumn" prefWidth="90.0" text="Qté Charge" />
+                  <TableColumn fx:id="qteTotalColumn" prefWidth="90.0" text="Qté Total" />
+                  <TableColumn fx:id="qteRetourGlobalColumn" minWidth="17.0" prefWidth="151.0" text="Qté Retour">
+                     <columns>
+                        <TableColumn fx:id="qteRetourColumn" onEditCommit="#editCommitQuantiteRetourColumn" prefWidth="73.0" text="Qté" />
+                        <TableColumn fx:id="qteRetourCaisseColumn" onEditCommit="#editCommitQuantiteRetourCaisseColumn" prefWidth="73.0" text="Qté Caisse" />
+                     </columns></TableColumn>
+                  <TableColumn fx:id="qteTotalRetourColumn" minWidth="2.0" prefWidth="90.0" text="Qté T.Retour" />
+                  <TableColumn fx:id="qteVenteColumn" minWidth="2.0" prefWidth="90.0" text="Qté Vente" />
+               </columns>
+            </TableView>
+            <GridPane layoutY="-7.0" prefHeight="115.0" prefWidth="928.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+              <columnConstraints>
+                  <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" maxWidth="181.0" minWidth="10.0" prefWidth="117.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="306.0" minWidth="10.0" prefWidth="189.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="328.0" minWidth="10.0" prefWidth="261.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="175.0" minWidth="10.0" prefWidth="175.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="185.0" minWidth="10.0" prefWidth="185.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints maxHeight="60.0" minHeight="10.0" prefHeight="57.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="67.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="61.0" minHeight="10.0" prefHeight="28.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Label prefHeight="17.0" prefWidth="69.0" text="Vendeur:" GridPane.rowIndex="1">
+                     <font>
+                        <Font name="Nyala" size="18.0" />
+                     </font>
+                  </Label>
+                  <ComboBox fx:id="vendeurCombo" onAction="#vendeurComboOnAction" prefHeight="25.0" prefWidth="189.0" promptText="Sélectionner..." GridPane.columnIndex="1" GridPane.rowIndex="1" />
+               </children>
+            </GridPane>
+         </children>
+      </AnchorPane>
+      <GridPane layoutX="6.0" layoutY="266.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="184.0" prefWidth="322.0" AnchorPane.leftAnchor="0.0">
+         <columnConstraints>
+            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="181.0" minWidth="0.0" prefWidth="30.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="307.0" minWidth="10.0" prefWidth="277.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="223.0" minWidth="10.0" prefWidth="30.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints maxHeight="83.0" minHeight="0.0" prefHeight="36.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="76.0" minHeight="0.0" prefHeight="28.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="108.0" minHeight="10.0" prefHeight="90.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="48.0" minHeight="0.0" prefHeight="30.0" vgrow="SOMETIMES" />
+         </rowConstraints>
+         <children>
+            <TextField fx:id="libelleField" alignment="CENTER" disable="true" prefHeight="49.0" prefWidth="307.0" promptText="Code Retour" GridPane.columnIndex="1">
+               <font>
+                  <Font name="Nyala" size="20.0" />
+               </font>
+            </TextField>
+            <TextArea fx:id="designationTextArea" nodeOrientation="LEFT_TO_RIGHT" prefHeight="200.0" prefWidth="200.0" promptText="Désignation" styleClass="label1" stylesheets="@../../Styles/css/FigureDeStyle.css" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <Label fx:id="codeerreur" prefHeight="20.0" prefWidth="309.0" styleClass="labelerreur" textFill="#e80404" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+         </children>
+      </GridPane>
+   </children>
+</AnchorPane>
